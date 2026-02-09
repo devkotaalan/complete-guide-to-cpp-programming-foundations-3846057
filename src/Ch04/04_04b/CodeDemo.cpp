@@ -25,6 +25,10 @@ int main(){
     *elapsed_seconds = *end - *start;
 
     std::cout << "Reaction time: " << elapsed_seconds->count() << "s" << std::endl;
+
+    delete start;
+    delete end;
+    delete elapsed_seconds;
     
     std::cout << std::endl << std::endl;
     return 0;

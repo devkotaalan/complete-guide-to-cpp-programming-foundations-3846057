@@ -11,14 +11,14 @@ int main(){
     auto scorePtr = playerScores.begin();
 
     while(scorePtr != playerScores.end()) {
-        std::cout << *scorePtr << std::endl;
+        std::cout << *scorePtr << " ";
         scorePtr = next(scorePtr, 1);
     }
     std::cout << std::endl;
 
     int i = 0;
     do {
-        std::cout << playerScores[i] << std::endl;
+        std::cout << playerScores[i] << " ";
         i++;
     } while (i < playerScores.size());
 

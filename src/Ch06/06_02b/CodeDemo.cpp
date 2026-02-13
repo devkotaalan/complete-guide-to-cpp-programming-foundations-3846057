@@ -10,7 +10,7 @@ int square(int x) {
     return x;
 }
 
-// Takes arguments by address
+// Takes arguments by address/ pointer
 void swap(int *x, int *y) {
     int temp = *x;
     *x = *y;

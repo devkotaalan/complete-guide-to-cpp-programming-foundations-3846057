@@ -13,18 +13,18 @@ double CalculateScore(int millisecondsDiff, double bonusMultiplier = 1.0){
 
     // Write your code here
     if (millisecondsDiff <= 50.0){
-        score = 100.0 * bonusMultiplier;
+        score = 100.0;
     }
     else if (millisecondsDiff <= 100.0){
-        score = 70.0 * bonusMultiplier;
+        score = 70.0;
     }
     else if (millisecondsDiff <= 200.0){
-        score = 50.0* bonusMultiplier;
+        score = 50.0;
     }
     else {
         score = 0;
     }
-    return score;
+    return score * bonusMultiplier;
 }
 
 // Overloaded function to calculate score based on seconds difference 
@@ -33,20 +33,8 @@ double CalculateScore(double secondsDiff, double bonusMultiplier = 1.5){
     double score = 0.0;
     
     // Write your code here
-    double millisecondsDiff = secondsDiff * 1000;
-    if (millisecondsDiff <= 50.0){
-        score = 100.0 * bonusMultiplier;
-    }
-    else if (millisecondsDiff <= 100.0){
-        score = 70.0 * bonusMultiplier;
-    }
-    else if (millisecondsDiff <= 200.0){
-        score = 50.0* bonusMultiplier;
-    }
-    else {
-        score = 0;
-    }
-    return score;
+    int millisecondsDiff = static_cast<int> (secondsDiff * 1000);
+    return CalculateScore(millisecondsDiff, bonusMultiplier);
 }
 
 // Function to call both overloaded functions and return a vector of results
